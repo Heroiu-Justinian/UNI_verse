@@ -1,13 +1,191 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+:root{
+	--primary-background: #1B1B1B;
+	--dark-background: #0F0E0E;
+	--light-purple-background:#3F3356;
+	--light-background-complement:#584A73;
+	--scrollbar-width:10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+*{
+	/* Firefox compatibility for the scrollbar (meeded for the AcitivtyPanel of /universe . See MainPanel.js for more*/
+	scrollbar-width: thin;
+	scrollbar-color:var(--light-background-complement) var(--light-purple-background);
+}
+
+*::-webkit-scrollbar{
+	width:var(--scrollbar-width);
+}
+*::-webkit-scrollbar-track {
+	background: var(--light-purple-background);        /* color of the tracking area */
+	border-radius:5px;
+  }
+  
+*::-webkit-scrollbar-thumb {
+	background-color: var(--light-background-complement);    /* color of the scroll thumb */
+	border-radius: 5px;       /* roundness of the scroll thumb */
+}
+
+
+html{
+scroll-behavior: smooth;
+overflow-x: hidden;
+}
+
+body {
+	margin: 0;
+	font-family: "Nunito", sans-serif; 
+	background-color: var(--primary-background);
+	overflow-x:hidden;
+}
+
+.desktopNavbar {
+	background-color: var(--dark-background);
+	padding: 8px 5% 7px 5%;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.07);
+	display: flex;
+	align-self: center;
+	justify-content:flex-end;
+	width: auto;
+}
+.logo {
+	margin-left: 10%;
+	height:55px;
+	padding:15 0 0 0;
+}
+form{
+	position: relative;
+	background-color:var(--light-purple-background);
+	width:100%;
+	border-radius:6px;
+}
+input{
+	border:none;
+	background-color:var(--light-purple-background);
+	color:white;
+	margin-left:10%;
+}
+input:focus{
+	outline:none;
+}
+.search-bar{
+	display:flex;
+	width:30%;
+	height:100%;
+	margin:auto 0 auto 10%;
+	color:var(--light-background-complement);
+	background-color:var(--light-purple-background);
+	padding:0.25rem 0;
+	border-radius:6px;
+}
+.navButtons {
+	width:auto;
+	display:flex;
+	flex:1 0 auto;
+	justify-content:flex-end;
+}
+.navButtons > a{
+	text-decoration: none;
+	display: inline-flex;
+	margin:auto 0 auto 0;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 30px;
+	color: white;
+	margin-left:7%;
+	text-transform: uppercase;
+}
+.navButtons >  img{
+	margin:12px;
+	width:20px;
+}
+
+.hero{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	width:auto;
+	height:100%;
+	margin:auto;
+}
+.mobileHero{
+	display: flex;
+	padding:15%;
+	justify-items: space-evenly;
+}
+.mobileHeroText{
+	display: flex;
+	align-items: space-between;
+	color:white;
+	font-weight: bold;
+}
+.mobileHeroText{
+	display:inline-block;
+	width:90%;
+	text-transform: uppercase;
+}
+.bullet{
+	display:inline-flex;
+	padding:5% 25%;
+}
+.bullet > *{
+	display:inline-block;
+}
+.hero::after{
+	top:70vh;
+	left: 80vw;
+	position:absolute;
+	content:url("./components/illustration/Tesseract.svg"); 
+}
+.hero::before{
+	content:url("./components/illustration/bigTesseract.svg");
+	position:absolute;
+	top:5vh;
+	left:-1vw;
+}
+.hero > img {
+	margin:12vw 9vw;
+}
+.bigLogo{
+	display:block;
+	width:35vw;
+}
+.mobileHero > img {
+	align-self: center;
+	margin:auto;
+}
+.scroll{
+	text-align:center;
+}
+.scroll > button {
+	background:none;
+	border:none;
+	display:block;
+	margin:auto;
+}
+.scroll > p{
+	color:#ffffff;
+	padding:0;
+	margin:0;
+}
+@media (max-width:500px){
+	.hero::after{
+		display:none;
+	}
+	.hero::before{
+		display:none;
+	}
+	.navButtons{
+		align-items:flex-start;
+		width:100%;
+	}
+	.navButtons > a{
+		font-size:10px;
+	}
+	.navButtons > img {
+		width:13px;
+	}
 }
