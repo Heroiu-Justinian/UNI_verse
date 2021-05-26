@@ -1,28 +1,33 @@
 :root{
-	--primary-background: #1B1B1B;
-	--dark-background: #0F0E0E;
-	--light-purple-background:#3F3356;
-	--light-background-complement:#584A73;
+    --primary-background: #1B1B1B;
+    --dark-background: #0F0E0E;
+    --light-purple-background:#3F3356;
+    --light-background-complement:#584A73;
     --blue-ish-purple:#6979F8;
     --blue-semantic:#0084F4;
 }
 
 .panel{
     width:100%;
+    height:100vh;
     display:flex;
-    flex-direction: column;
+    flex-direction:row;
+    margin-top:5vh;
 }
 .uniPanel{
+    height:100vh;
     width:60%;
-    display:flex;
     flex-direction:column;
+    flex-shrink:0;
     justify-content:center;
 }
 .activityNav{
     list-style-type:none;
     justify-content: center;
+    margin:auto;
     display:flex;
-    width:100%;
+    width:85%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 ul > li{
     opacity:0.9;
@@ -62,15 +67,16 @@ ul > li > a:active{
     margin:5vh auto;
     background-color: var(--light-purple-background);
     border-radius:20px;
+    padding:2% 1%;
 }
 .previewImg{
-    align-self: flex-start;
+    align-self: center;
     margin:0 5%;
     width:25%;
 }
 .cardContainer > h2{
     align-self:center;
-    margin-top:-5%;
+    margin-top:-3%;
     margin-bottom:5%;
     color:white;
     border-bottom:solid 1px white;
@@ -82,6 +88,9 @@ ul > li > a:active{
     text-align:center;
 }
 .ranks{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
     width:30%;
     border-right: solid 1px white;
     border-left: solid 1px white;
@@ -93,6 +102,10 @@ ul > li > a:active{
     margin: 2%;
     width:100%;
 }
+.ranks > div > img{
+    width:32px;
+    margin:3%;
+}
 .ranks > div > p{
     color:white;
     font-size:14px;
@@ -102,6 +115,7 @@ ul > li > a:active{
     display:flex;
     flex-direction:column;
     justify-content:center;
+    margin:auto;
     width:30%;
 }
 .button {
@@ -132,4 +146,137 @@ ul > li > a:active{
 
 .active{
     background-color: red;
+}
+
+
+/* News */
+.newsPanel{
+    margin-top:-1vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    flex-shrink: 0;
+    width:30%;
+    height:100vh;
+    margin-left:3vh;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+
+.newsPanel > h2 {
+    font-size: 16px;
+    display: flex;
+    text-align: center;
+    color:white;
+    opacity:0.8;
+    text-transform: capitalize;
+    margin-bottom:5%;
+    padding:2%;
+    border-left: solid 3px var(--blue-ish-purple);
+}
+.newsPanel > section{
+    height:100vh;
+    width:100%;
+    margin:auto;
+}
+.newsCard{
+    height:75vh;
+    width:80%;
+    background-color: var(--blue-ish-purple);
+    border-radius:  10px 10px 2px 2px;
+    margin:10% auto;
+}
+.newsPreview{
+    width:100%;
+}
+.newsPreview > img{
+   width:100%;
+}
+.lowerNewsCard{
+    width:90%;
+    margin:auto;
+    color:white;
+}
+.lowerNewsCard > img{
+    display:inline;
+    margin:auto;
+
+}
+.date{
+    font-size:14px;
+}
+.newsCardTitle{
+    font-size:24px;
+}
+.newsCardDescription{
+    font-size:17px;
+    margin:3%;
+}
+.maiMult{
+    display:inline;
+    margin:auto;
+}
+/* Media Queries */
+
+@media (max-width:1200px){
+    .uniPanel{
+        width:100%;
+    }
+    .cardContainer{
+        width: 70vw;
+        height:auto;
+        padding:10vh 0;
+    }  
+    .lowerCardContainer{
+        display: flex;
+        flex-direction:column;
+    }
+    .previewImg{
+        width:40%;
+        margin-bottom:1%;
+    }
+    .ranks{
+        width:40%;
+        align-self: center;
+        border-right:none;
+        border-left:none;
+        border-top: solid 1px white;
+    }
+    .buttonSection{
+        width:40%;
+    }
+        
+    
+}
+
+@media (max-width:650px){
+    .search-bar{
+        width:80%;
+        margin:0 auto;
+    }
+    .cardContainer{
+        width:85vw;
+    }
+    .activityNav{
+        padding:0;
+        font-size:15px;
+    }
+    .cardContainer > h2{
+        font-size:16px;
+        width:90%;
+        text-align:center;
+    }
+    .previewImg{
+        width:60%;
+    }
+    .ranks{
+        width:80%;
+    }
+    .buttonSection{
+        width:80%;
+    }
+    .navButtons{
+        display:none;
+    }
+
 }

@@ -11,12 +11,13 @@
 
 *{
 	/* Firefox compatibility for the scrollbar (meeded for the AcitivtyPanel of /universe . See MainPanel.js for more*/
-	scrollbar-width: thin;
+	scrollbar-width: none;
 	scrollbar-color:var(--light-background-complement) var(--light-purple-background);
 }
 
 *::-webkit-scrollbar{
-	width:var(--scrollbar-width);
+	/* width:var(--scrollbar-width); */
+	width:0;
 }
 *::-webkit-scrollbar-track {
 	background: var(--light-purple-background);        /* color of the tracking area */
@@ -39,8 +40,11 @@ body {
 	font-family: "Nunito", sans-serif; 
 	background-color: var(--primary-background);
 	overflow-x:hidden;
+	scrollbar-width: none;
 }
-
+body::-webkit-scrollbar{
+	display:none;
+}
 .desktopNavbar {
 	background-color: var(--dark-background);
 	padding: 8px 5% 7px 5%;
@@ -55,18 +59,6 @@ body {
 	height:55px;
 	padding:15 0 0 0;
 }
-form{
-	position: relative;
-	background-color:var(--light-purple-background);
-	width:100%;
-	border-radius:6px;
-}
-input{
-	border:none;
-	background-color:var(--light-purple-background);
-	color:white;
-	margin-left:10%;
-}
 input:focus{
 	outline:none;
 }
@@ -79,6 +71,14 @@ input:focus{
 	background-color:var(--light-purple-background);
 	padding:0.25rem 0;
 	border-radius:6px;
+}
+
+.search-bar > input{
+	border:none;
+	background-color:var(--light-purple-background);
+	color:white;
+	margin-left:10%;
+	width:80%;
 }
 .navButtons {
 	width:auto;

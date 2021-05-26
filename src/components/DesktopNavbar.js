@@ -15,7 +15,7 @@ const DesktopNavbar = ({showSearch}) => {
     <div className="desktopNavbar" >
       <div style={{display:disp?"inline":"none"}}><img className="logo" src={logo} ></img></div>
       {/* could not find any other fast way than additional div wrapper */}
-      <div style={{display:showSearch?"block":"none" }} className="search-bar">
+      <div style={{display:showSearch?"flex":"none" }} className="search-bar">
         <Searchbar  label="Cauta..."></Searchbar>
       </div>
 
