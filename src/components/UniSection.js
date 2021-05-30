@@ -7,8 +7,6 @@ const UniSection =()=>{
         name.keys().map((item,index) => {images[item.replace("./","")] = name(item);})
     }
 
-    const previews = importAll(require.context("./images",false,/\.(png|jpe?g|)$/))
-    console.log(previews)
     return(
         <section>
             <Card uniName="Universitatea Politehnica Bucuresti" image={face}

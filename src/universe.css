@@ -248,7 +248,11 @@ ul > li > a:active{
         
     
 }
-
+@media (max-width:900px){
+    .navButtons{        
+        display:none;
+    }
+}
 @media (max-width:650px){
     .search-bar{
         width:80%;
@@ -275,8 +279,8 @@ ul > li > a:active{
     .buttonSection{
         width:80%;
     }
-    .navButtons{
+    /* .navButtons{
         display:none;
-    }
+    } */
 
 }

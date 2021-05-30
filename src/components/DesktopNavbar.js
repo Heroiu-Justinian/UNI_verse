@@ -6,11 +6,11 @@ import Searchbar from "./Searchbar"
 
 
 
-const DesktopNavbar = ({showSearch}) => {
+const DesktopNavbar = ({showSearch,showButtons}) => {
   const disp = window.screen.width > 720?true:false
-  const search = showSearch? "flex" :"none";
 
 
+  console.log(showButtons)
   return (
     <div className="desktopNavbar" >
       <div style={{display:disp?"inline":"none"}}><img className="logo" src={logo} ></img></div>
@@ -19,7 +19,7 @@ const DesktopNavbar = ({showSearch}) => {
         <Searchbar  label="Cauta..."></Searchbar>
       </div>
 
-      <NavButton first="discover" second="contact" third="community"/> 
+      <NavButton first="discover" second="contact" third="community" buttons={showButtons}/> 
     </div>
      );
 };
